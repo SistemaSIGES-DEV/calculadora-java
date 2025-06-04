@@ -1,17 +1,44 @@
 package org.example;
 
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Calculadora calculadora = new Calculadora();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        while(true){
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Elija una funcion: \n1- Sumar\n2- Restar\n3- Multiplicar\n4- Dividir\n5- Parar");
+
+            int funcion = sc.nextInt();
+
+            if(funcion == 5){
+                System.out.println("Adios...");
+                break;
+            }
+
+            System.out.println("Digite el primer numero: ");
+            int num = sc.nextInt();
+
+            System.out.println("Digite el segundo numero: ");
+            int seg = sc.nextInt();
+
+            switch(funcion){
+                case 1:
+                    System.out.println(calculadora.sumar(num, seg));
+                    break;
+                case 2:
+                    System.out.println(calculadora.restar(num, seg));
+                    break;
+                case 3:
+                    System.out.println(calculadora.multiplicar(num, seg));
+                    break;
+                case 4:
+                    System.out.println(calculadora.dividir(num, seg));
+                    break;
+            }
         }
     }
 }
