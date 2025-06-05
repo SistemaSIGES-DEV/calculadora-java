@@ -84,14 +84,12 @@ public class CalculadoraTest {
         String expected = "No se puede dividir por cero";
 
         // Act
-        int actual = calculadora.dividir(a, b);
-
-        // Assert
-        IllegalArgumentException ex = assertThrows(
+        IllegalArgumentException actual = assertThrows(
                 IllegalArgumentException.class,
                 () -> calculadora.dividir(4, 0)
         );
 
-        assertEquals(expected, ex.getMessage());
+        // Assert
+        assertEquals(expected, actual.getMessage());
     }
 }
