@@ -20,4 +20,18 @@ public class CalculadoraTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void testRestar_and_returnSameValue(){
+        // Arrange
+        int a = 4;
+        int b = 6;
+        int expected = -2;
+
+        // Act
+        int actual = calculadora.restar(a, b);
+
+        // Assert
+        assertEquals(expected, actual);
+    }
+
 }
