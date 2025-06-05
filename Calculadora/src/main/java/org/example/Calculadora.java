@@ -17,7 +17,14 @@ public class Calculadora {
         return -1;
     }
 
-    public int dividir(int a, int b){
-        return -1;
+    public int dividir(int a, int b) throws IllegalAccessException {
+        int resultado = 0;
+        try{
+            resultado = a/b;
+        }
+        catch(ArithmeticException e){
+            throw new ArithmeticException("No se puede dividir por cero");
+        }
+        return resultado;
     }
 }

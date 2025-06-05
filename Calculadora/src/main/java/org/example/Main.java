@@ -36,7 +36,11 @@ public class Main {
                     System.out.println(calculadora.multiplicar(num, seg));
                     break;
                 case 4:
-                    System.out.println(calculadora.dividir(num, seg));
+                    try {
+                        System.out.println(calculadora.dividir(num, seg));
+                    } catch (ArithmeticException | IllegalAccessException e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
             }
         }

@@ -21,7 +21,7 @@ public class CalculadoraTest {
     }
 
     @Test
-    void testDividir_and_returnExactIntValue(){
+    void testDividir_and_returnExactIntValue() throws IllegalAccessException {
         // Arrange
         int a = 10;
         int b = 2;
@@ -35,7 +35,7 @@ public class CalculadoraTest {
     }
 
     @Test
-    void testDividir_and_returnAroundIntValue(){
+    void testDividir_and_returnAroundIntValue() throws IllegalAccessException {
         // Arrange
         int a = 4;
         int b = 5;
@@ -49,22 +49,20 @@ public class CalculadoraTest {
     }
 
     @Test
-    void testDividirPorCero_and_returnZero(){
+    void testDividirPorCero_and_returnZero() throws IllegalAccessException {
         // Arrange
         int a = 4;
         int b = 0;
         String expected = "No se puede dividir por cero";
 
         // Act
-        int actual = calculadora.dividir(a, b);
-
-        // Assert
-        IllegalArgumentException ex = assertThrows(
-                IllegalArgumentException.class,
+        ArithmeticException actual = assertThrows(
+                ArithmeticException.class,
                 () -> calculadora.dividir(4, 0)
         );
 
-        assertEquals(expected, ex.getMessage());
+        // Assert
+        assertEquals(expected, actual.getMessage());
     }
 
 }
