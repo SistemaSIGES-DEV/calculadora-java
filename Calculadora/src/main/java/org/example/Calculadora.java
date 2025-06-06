@@ -14,7 +14,7 @@ public class Calculadora {
     }
 
     public int multiplicar(int a, int b){
-        return -1;
+        return a * b;
     }
 
     public int dividir(int a, int b){
